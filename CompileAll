@@ -1,3 +1,3 @@
-g++ Player1/Player1.cpp -o Player1/run
-g++ Player2/Player2.cpp -o Player2/run
-g++ *.cpp -o TestBuild -g
+g++ Player1/Player1.cpp -o Player1/run -std=c++14
+g++ Player2/Player2.cpp -o Player2/run -std=c++14
+g++ *.cpp -o TestBuild -g -std=c++14
