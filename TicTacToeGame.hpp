@@ -2,7 +2,7 @@
 #define TIC_TAC_TOE_HPP
 
 #include"TicTacToeField.hpp"
-#include<nlohmann/json.hpp>
+#include"json.hpp"
 
 class TicTacToe
 {
