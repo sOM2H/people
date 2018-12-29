@@ -1,3 +1,3 @@
-g++ Player1/Player1.cpp -o Player1/run -std=c++14
-g++ Player2/Player2.cpp -o Player2/run -std=c++14
-g++ *.cpp -o TestBuild -g -std=c++14
+g++ TicTacToe/Player1/Player1.cpp -o ./TicTacToe/Player1/run -std=c++14
+g++ TicTacToe/Player2/Player2.cpp -o ./TicTacToe/Player2/run -std=c++14
+g++ TicTacToe/*.cpp Game.cpp main.cpp -o TestBuild -g -std=c++14

@@ -6,7 +6,6 @@
 
 Move process(std::string file)
 {
-    
     std::ifstream in;
     srand(time(nullptr));
     in.open(file);

@@ -6,9 +6,9 @@ Move process(std::string);
 
 int main()
 {
-    Move playerMove = process("Player1/field.txt");
+    Move playerMove = process("TicTacToe/Player2/field.txt");
     std::ofstream file;
-    file.open("Player1/move.txt");
+    file.open("TicTacToe/Player2/move.txt");
     file << playerMove.r << ' ' << playerMove.c;
     file.close();
 }

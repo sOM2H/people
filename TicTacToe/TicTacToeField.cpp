@@ -22,7 +22,12 @@ char& TicTacToeField::at(int r, int c)
     throw OutOfBounds();
 }
 
-std::vector<char>& TicTacToeField::operator[](int pos)
+std::vector<char>& TicTacToeField::operator[](const int pos)
+{
+    return field[pos];
+}
+
+std::vector<char> TicTacToeField::operator[](const int pos) const
 {
     return field[pos];
 }
@@ -76,7 +81,7 @@ void TicTacToeField::setAt(int r, int c, char player)
     item = player;
 }
 
-void TicTacToeField::print()
+void TicTacToeField::print() const
 {
     std::cout << "------Printing field------\n";
     for(auto v : field)

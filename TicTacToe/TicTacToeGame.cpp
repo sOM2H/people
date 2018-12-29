@@ -1,10 +1,9 @@
 #include"TicTacToeGame.hpp"
 
-void TicTacToe::run()
+/*void TicTacToe::run()
 {
-    //std::cout << finished();
     nlohmann::json allMoves(nlohmann::json::value_t::array);
-    while(finished() == 'n')
+    while(!finished())
     {
         field.saveToFile("Player1/field.txt");
         system("Player1/run");
@@ -29,20 +28,8 @@ void TicTacToe::run()
             std::cerr << "Player 1 caused exception: " << rmex.what();
             return;
         }
-        //field.print();
-        char result = finished();
-        if(result == 'd')
-        {
-        //    std::cout << "Draw\n";
-            //return;
+        if(finished())
             break;
-        }
-        if(result == 'w')
-        {
-        //    std::cout << "Player 1 won\n";
-            //return;
-            break;
-        }
         field.saveToFile("./Player2/field.txt");
         system("./Player2/run");
         move.open("./Player2/move.txt");
@@ -64,18 +51,8 @@ void TicTacToe::run()
             std::cerr << "Player 2 caused exception: " << rmex.what();
             return;
         }
-        //field.print();
-        result = finished();
-        if(result == 'd')
+        if(finished())
         {
-            //std::cout << "Draw\n";
-            //return;
-            break;
-        }
-        if(result == 'w')
-        {
-            //std::cout << "Player 2 won\n";
-            //return;
             break;
         }
     }
@@ -83,10 +60,9 @@ void TicTacToe::run()
     movesList.open("moves.json");
     movesList << allMoves.dump();
     movesList.close();
-    //std::cout << "Draw\n";
-}
+}*/
 
-char TicTacToe::finished()
+char TicTacToe::finished() const
 {
     for(int i = 0; i < 3; ++i)
     {
@@ -99,8 +75,8 @@ char TicTacToe::finished()
     bool filled = true;
     for(int i = 0; i < 3; ++i)
         for(int j = 0; j < 3; ++j)
-            if(field.at(i, j) == 0)
+            if(field[i][j] == 0)
                 filled = false;
-    if(filled) return 'd';              // draw
-    return 'n';                         // not finished
+    if(filled) return 'd';               // draw
+    return 'n';                          // not finished
 }
